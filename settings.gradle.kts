@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Multi Module Example"
 include(":app")
- 
