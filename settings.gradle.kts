@@ -21,3 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Multi Module Example"
 include(":app")
+include(":core:network")
+include(":core:domain")
+include(":feature:home")
+include(":feature:detail")
+include(":feature:search")
+include(":utils:presentation")
+include(":utils:function")

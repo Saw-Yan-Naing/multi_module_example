@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.syn.multimoduleexample.navigation.MainNavigationScreen
 import com.syn.multimoduleexample.ui.theme.MultiModuleExampleTheme
 import kotlinx.coroutines.delay
 
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
         )
         setContent {
             MultiModuleExampleTheme {
-                PingPongChecker()
+                MainNavigationScreen()
             }
         }
     }
