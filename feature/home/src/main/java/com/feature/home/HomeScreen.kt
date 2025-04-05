@@ -1,6 +1,10 @@
 package com.feature.home
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -16,16 +20,23 @@ import kotlinx.serialization.Serializable
 @Serializable
 data object HomeRoute
 
-fun NavGraphBuilder.homeScreenNavigation() {
+fun NavGraphBuilder.homeScreenNavigation(
+    goToSearch: () -> Unit,
+) {
     composable<HomeRoute> {
-        HomeScreen()
+        HomeScreen(
+            goToSearch = goToSearch
+        )
     }
 }
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun HomeScreen(modifier: Modifier = Modifier) {
+private fun HomeScreen(
+    modifier: Modifier = Modifier,
+    goToSearch: () -> Unit
+) {
     CommonScaffold(
         modifier = modifier,
         appBar = {
@@ -40,10 +51,24 @@ private fun HomeScreen(modifier: Modifier = Modifier) {
             )
         }
     ) {
-        Text(
-            text = "Home Screen",
-            modifier = Modifier.fillMaxSize()
-                .align(Alignment.Center),
-        )
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = "Home Screen",
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            ElevatedButton(
+                onClick = goToSearch,
+            ) {
+                Text(
+                    text = "Go to Search",
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
     }
 }

@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.feature.home.HomeRoute
 import com.feature.home.homeScreenNavigation
+import com.feature.search.SearchRoute
+import com.feature.search.searchScreenNavigation
 
 @Composable
 fun MainNavigationScreen(
@@ -20,7 +22,17 @@ fun MainNavigationScreen(
         startDestination = HomeRoute
     ) {
 
-        homeScreenNavigation()
+        homeScreenNavigation(
+            goToSearch = {
+                navController.navigate(SearchRoute){
+                    launchSingleTop = true
+                }
+            }
+        )
+
+        searchScreenNavigation(
+            navigateBack = navController::navigateUp
+        )
 
     }
 }

@@ -58,8 +58,6 @@ dependencies {
     implementation(project(":feature:home"))
     implementation(project(":feature:detail"))
     implementation(project(":feature:search"))
-//    implementation(project(":utils:presentation"))
-//    implementation(project(":utils:function"))
 
     /**
      * Navigation && Serialization

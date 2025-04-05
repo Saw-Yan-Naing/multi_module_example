@@ -19,6 +19,12 @@ fun CommonScaffold(
 ) {
     Scaffold(
         modifier = modifier,
+        topBar = {
+            appBar?.invoke()
+        },
+        bottomBar = {
+            bottomBar?.invoke()
+        }
     ) { paddingValue ->
         Box(
             modifier = Modifier.fillMaxSize()

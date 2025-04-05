@@ -49,6 +49,8 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
 
+    api(project(":utils:presentation"))
+//    api(project(":utils:function"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
